@@ -2,7 +2,6 @@ from sentence_transformers import SentenceTransformer, util
 import pandas as pd
 import torch
 
-# Load the model
 model = SentenceTransformer("khathathorn/modelforreccomendation")
 
 # Load the data
