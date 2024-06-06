@@ -3,7 +3,7 @@ import pandas as pd
 import torch
 
 # Load the model
-model = SentenceTransformer("model")
+model = SentenceTransformer("khathathorn/modelforreccomendation")
 
 # Load the data
 data = pd.read_csv('deploy/data.csv')
