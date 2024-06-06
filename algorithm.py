@@ -2,8 +2,15 @@ from sentence_transformers import SentenceTransformer, util
 import pandas as pd
 import torch
 
+try:
+    model = SentenceTransformer("khathathorn/modelforreccomendation")
+except TypeError as e:
+    print("TypeError encountered:", e)
+    # Manually load the model components and adjust the pooling configuration
+    word_embedding_model = models.Transformer('khathathorn/modelforreccomendation')
+    pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension(), pooling_mode_mean_tokens=True)
+    model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
 
-model = SentenceTransformer("khathathorn/modelforreccomendation")
 
 # Load the data
 data = pd.read_csv('deploy/data.csv')
