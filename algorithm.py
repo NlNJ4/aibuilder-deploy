@@ -1,4 +1,4 @@
-from sentence_transformers import SentenceTransformer, models
+from sentence_transformers import SentenceTransformer, models ,util
 import pandas as pd
 import torch
 
