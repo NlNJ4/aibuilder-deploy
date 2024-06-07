@@ -5,8 +5,8 @@ import streamlit as st
 
 def google_image_search(query, num_images=1):
     search_url = "https://www.googleapis.com/customsearch/v1"
-    api_key = 'YOUR_API_KEY'  # Replace with your actual API key
-    cx = 'YOUR_CX'            # Replace with your Custom Search Engine ID
+    api_key = 'AIzaSyCBo9htNC3hgUF_gVZlYqA1Y-3SF6j8gYQ'  # Replace with your actual API key
+    cx = '4572b0e32e6af4d2c'            # Replace with your Custom Search Engine ID
     params = {
         'q': query,
         'key': api_key,
