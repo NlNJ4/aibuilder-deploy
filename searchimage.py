@@ -3,7 +3,7 @@ from PIL import Image
 from io import BytesIO
 import streamlit as st
 
-def google_image_search(query, num_images=1):
+def google_image_search(query, num_images=5):
     search_url = "https://www.googleapis.com/customsearch/v1"
     api_key = 'AIzaSyCBo9htNC3hgUF_gVZlYqA1Y-3SF6j8gYQ'  # Replace with your actual API key
     cx = '4572b0e32e6af4d2c'            # Replace with your Custom Search Engine ID
@@ -25,12 +25,13 @@ def google_image_search(query, num_images=1):
     
     return image_urls
 
-def display_images(image_urls, size=(200, 200)):
+def display_images(image_urls, size=(800, 800)):
     for url in image_urls:
         try:
             response = requests.get(url)
             img = Image.open(BytesIO(response.content))
             img = img.resize(size)
             st.image(img, caption=url, use_column_width=True)
+            return 0
         except Exception as e:
             st.write(f"Could not load image from {url} - {e}")
