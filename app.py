@@ -3,6 +3,7 @@ from algorithm import findmenu
 import pandas as pd
 from datetime import datetime
 import gspread
+from searchimage import google_image_search,display_images
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Connect to Google Sheets
@@ -27,6 +28,8 @@ if st.button("Find Menu"):
         if recommendations:
             for rec in recommendations:
                 st.write(rec)
+                url = google_image_search(rec)
+                display_images(url)
         else:
             st.write("No recommendations found.")
     else:
