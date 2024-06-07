@@ -26,6 +26,7 @@ def google_image_search(query, num_images=5):
     return image_urls
 
 def display_images(image_urls, size=(800, 800)):
+    image_urls = image_urls[1:]
     for url in image_urls:
         try:
             response = requests.get(url)
@@ -34,4 +35,5 @@ def display_images(image_urls, size=(800, 800)):
             st.image(img, caption=url, use_column_width=True)
             return 0
         except Exception as e:
-            st.write(f"Could not load image from {url} - {e}")
+            continue
+            #st.write(f"Could not load image from {url} - {e}")
