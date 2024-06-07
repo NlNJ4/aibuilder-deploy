@@ -29,7 +29,8 @@ if st.button("Find Menu"):
             for rec in recommendations:
                 st.write(rec)
                 url = google_image_search(rec)
-                display_images(url)
+                st.write(url)
+                #display_images(url)
         else:
             st.write("No recommendations found.")
     else:
