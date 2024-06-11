@@ -17,8 +17,9 @@ st.title("แนะนำเมนูของหวาน")
 
 # Introduction text
 st.write("สวัสดีครับ ผมเป็นนักศึกษาที่กำลังทำโครงงานในด้านของการแนะนำเมนูของหวาน")
-st.write("ส่วนนี้ก็เป็นตัวของ Prototype ของผมเอง อาจจะมีผิดพลาดและเมนูไม่ครอบคลุมขนาดนั้น")
-st.write("อาจจะลองค้นหาว่า เมนูของหวานที่เป็นเค้ก")
+st.write("ส่วนนี้ก็เป็นตัวของ Prototype ของผมเอง อาจจะมีผิดพลาดและเมนูไม่ครอบคลุมขนาดนั้นนะครับ")
+st.write("ถ้าลองใช้งานเสร็จแล้วอยากรบกวนให้คะแนนความถึงพอใจด้านล่างให้ผมเพื่อการปรับปรุงและพัฒนาต่อไปด้วยนะครับ")
+st.write("วิธีการใช้คืออาจจะลองค้นหาว่า เมนูของหวานที่เป็นเค้ก")
 
 dt = st.text_input("INPUT HERE")
 
@@ -28,7 +29,7 @@ if st.button("Find Menu"):
         if recommendations:
             for rec in recommendations:
                 st.write(rec)
-                url = google_image_search(rec)
+                url = google_image_search(rec+" dessert")
                 display_images(url)
         else:
             st.write("No recommendations found.")

@@ -26,7 +26,6 @@ def google_image_search(query, num_images=5):
     return image_urls
 
 def display_images(image_urls, size=(800, 800)):
-    image_urls = image_urls[1:]
     for url in image_urls:
         try:
             response = requests.get(url)
