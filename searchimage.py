@@ -7,8 +7,8 @@ def google_image_search(query, num_images=5):
     search_url = "https://www.googleapis.com/customsearch/v1"
     params = {
         'q': query,
-        'key': api_key,
-        'cx': cx,
+        'key': 'AIzaSyCBo9htNC3hgUF_gVZlYqA1Y-3SF6j8gYQ',
+        'cx': '4572b0e32e6af4d2c',
         'searchType': 'image',
         'num': num_images
     }
